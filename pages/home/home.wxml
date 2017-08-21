@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view style="background:#eee;">
+    <view class="userinfo">
+        <view wx:if="{{show}}">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </view>
+        <view wx:if="{{!show}}" style="display:flex;">
+            <view style="font-size:15px;">点击授权获得更多体验:</view>
+            <button style="margin-left:10px;"  open-type="getUserInfo" bindgetuserinfo="userInfoHandler" size="mini" type='primary'>授 权</button>
+        </view>
+
+    </view>
+    <view class="box">
+        <view class="list">
+            <view class="sub-title">
+                {{huodongTitle}}
+            </view>
+            <view>
+                <label style="display: flex;align-items: flex-start;">
+                    电 话: 
+                    <view >
+                        <input bindinput="inputTel" type="number" value="{{telNumber}}" name="tel" placeholder="请输入您的手机号"  placeholder-style="color:#ccc;"/>
+                        <text style="color:red;margin-left:10px;font-size:13px;">{{telExplain}}</text>
+                    </view> 
+                </label>
+                <label>姓 名:<input bindinput="inputName" value="{{uName}}"  name="uname" placeholder="请输入您的姓名"  placeholder-style="color:#ccc;"/></label>
+                <button class='submit' open-type="getUserInfo" bindgetuserinfo="submit" >{{submitBtn}}</button>
+            </view>
+        </view>
+        <view class="list">
+            <view class="sub-title">
+                扫描关注公众号
+            </view>
+            <view style="text-align:center;">
+                <image src="../../imgs/gongzhonghao.jpg" style="width:400rpx;height:400rpx;"></image>
+            </view>
+            <view style="text-align:center;font-size:15px;">微信公众号: HYT-IPS</view>
+        </view>
+        <view class="list">
+            <view class="sub-title">
+                相关小程序
+            </view>
+            <view wx:for="{{appID}}" bindtap="openAPPID">
+                <view class='appid-list' data-appid="{{item.AppID}}">{{item.title}}</view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="sub-title">
+                关于我们
+            </view>
+            <view class="about-us">
+                <view bindtap="webCopy" style="font-size:16px;">官 网: <text style="color:#025098">http://m.hytips.com/?xcx</text> <text class="copy">{{copyWebsite}}</text></view>
+                <view style="font-size:13px;line-height:10px;text-indent: 3px;">复制后在浏览器中粘贴此网址即可访问</view>
+                <!--
+                <view bindtap="phone">电话: <text style="color:#025098">0731-88778188</text> </view>
+                <view bindtap="mailCopy">邮箱: <text style="color:#025098">895685537@qq.com</text> <text class="copy">{{copyMail}}</text></view>
+                -->
+                <button open-type="contact" class="online-server">在线客服 ></button>
+            </view>
+        </view>
+
+    </view>
+</view>

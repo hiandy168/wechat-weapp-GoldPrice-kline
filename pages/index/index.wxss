@@ -1,0 +1,36 @@
+
+image {
+    vertical-align: middle;
+}
+.table{
+    width: 100%;
+    overflow: hidden;
+    border-left: 1px solid #666;
+    border-top: 1px solid #666;
+    background: #fff;
+}
+
+.tr{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 790px;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+}
+.tr-title{
+     font-size: 15px;
+    font-weight: bold;
+}
+.tr text{
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+}
+.content{
+    background: #fff;
+    padding:10px 5px;
+    margin: 15px 0;
+}

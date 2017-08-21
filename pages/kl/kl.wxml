@@ -1,0 +1,50 @@
+<view class="container" style="height:{{windowHeight}}px;">
+    <view class="tab">
+        <picker mode="selector" value="{{index0}}" range="{{goldData}}" class="" bindchange="selectGold">
+            <view class="picker">
+                {{goldData[index0]}}
+                <view class="dropDownIcon"></view>
+            </view>
+        </picker>
+        <picker mode="selector" value="{{index1}}" range="{{timeData}}" class="" bindchange="selectTime">
+            <view class="picker">
+                {{timeData[index1]}}
+                <view class="dropDownIcon"></view>
+            </view>
+        </picker>
+    </view>
+    <view class="content tab-content">
+        <!--
+        <view class="stock">
+            <text>股票：{{stock}} - {{code}}</text>
+            <text>时间：{{time}}</text>
+            <text>昨收：{{yc}}</text>
+        </view>
+        -->
+        <view class="kline-average">
+            <text class="ma5">MA5:{{ma5}}</text>
+            <text class="ma10">MA10:{{ma10}}</text>
+            <text class="ma20">MA20:{{ma20}}</text>
+        </view>
+    </view>
+    <view style="width:100%;">
+        <scroll-view scroll-x="true">
+            <canvas canvas-id="k-line" class="stage" style="width: 100%; height: 250px;"></canvas>
+            <view class="x-time">
+                <text>{{XTime[2]}}</text>
+                <text>{{XTime[1]}}</text>
+                <text>{{XTime[0]}}</text>
+            </view>
+        </scroll-view>
+    </view>
+
+    <view>
+        <slider  bindchange="sliderchange" value="{{myUnit}}" min="5" max="{{timeNumber}}" step="1" show-value />
+    </view>
+
+    <!--
+    <view class="btn-area">
+        <text class="p text">kl1 render time: {{kl1RenderTime}}ms</text>
+    </view>
+     -->
+</view>

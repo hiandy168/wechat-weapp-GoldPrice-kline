@@ -1,0 +1,13 @@
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class="contain">
+    <view class="arc-title">{{title}}</view>
+    <!--
+    <view class="arc-infor">
+        <text> 来源:好运贴</text><text>{{time}}</text>
+    </view>
+    -->
+    <view style="font-size:15px;line-height:23px;">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+</view>

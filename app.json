@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/home/home",
+        "pages/lubodetail/lunbodetail",
+        "pages/kl/kl",
+        "pages/arcdetail/arcdetail",
+        "pages/answerArcdetail/answerArcdetail"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#338FFF",
+        "navigationBarTextStyle": "dark",
+        "navigationBarTitleText": "黄金交易价格行情一点通",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "dark",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "资讯",
+                "selectedColor": "#338FFF",
+                "iconPath": "imgs/tab_01.jpg",
+                "selectedIconPath": "imgs/tab_01.jpg"
+            },
+            {
+                "pagePath": "pages/kl/kl",
+                "text": "k线",
+                "selectedColor": "#338FFF",
+                "iconPath": "imgs/tab_02.png",
+                "selectedIconPath": "imgs/tab_02.png"
+            },
+            {
+                "pagePath": "pages/home/home",
+                "text": "我的",
+                "selectedColor": "#338FFF",
+                "iconPath": "imgs/tab_03.jpg",
+                "selectedIconPath": "imgs/tab_03.jpg"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 60000,
+        "downloadFile": 60000
+    }
+}

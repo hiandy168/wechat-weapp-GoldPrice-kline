@@ -1,0 +1,74 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view style="background:#eee;">
+    <view class="logo">
+        <image style="width:400rpx; height: 70rpx; background-color: #fff; vertical-align: middle;margin-right:20rpx;" mode="scaleToFill" src="../../imgs/logo.gif"></image>
+    </view>
+
+    <swiper bindtap="seeLunboDetail" indicator-dots="true" autoplay="true" interval="4000" duration="500" style="height:205px;">
+        <block wx:for="{{lunboData}}">
+            <swiper-item>
+                <image style="height:160px;" src="https://www.hytips.com{{item.litpic}}" />
+                <view style=" color: #333;font-size: 16px;padding: 0 3px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: center;">{{item.title}}</view>
+                <view class="arc-list-zhezhao" data-num="{{index}}"></view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="content">
+        <scroll-view scroll-y="true" style="height:180px;">
+            <view style="font-size:17px;font-weight:bold;">{{huangjinqihuo_title[0]}}：</view>
+            <view style="font-size:16px;line-height:22px;">
+                <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+            </view>
+        </scroll-view>
+    </view>
+
+    <view class="content">
+        <view style="font-size:17px;font-weight:bold;">{{huangjinqihuo_title[2]}}：</view>
+        <scroll-view class="table " scroll-x="true">
+            <view class="tr tr-title">
+                <text style="width:120px;">名称</text>
+                <text style="width:120px;">交易所</text>
+                <text>最新价</text>
+                <text>涨跌</text>
+                <text>开盘价</text>
+                <text>最高价</text>
+                <text>最低价</text>
+                <text>昨收</text>
+                <text>时间</text>
+            </view>
+            <view wx:for="{{tableData}}" class="tr">
+                <text style="width:120px;" data-code="{{item.code}}" bindtap="gotoKL">{{item.name}}</text>
+                <text style="width:120px;">{{item.jysname}}</text>
+                <text>{{item.newsell}}</text>
+                <text>{{item.zhangdie}}</text>
+                <text>{{item.opensell}}</text>
+                <text>{{item.highp}}</text>
+                <text>{{item.lowp}}</text>
+                <text>{{item.ytd_closep}}</text>
+                <text>{{item.time}}</text>
+            </view>
+        </scroll-view>
+    </view>
+
+    <view class="content">
+        <view style="font-size:17px;font-weight:bold;display:flex;justify-content:space-between;padding-right:10px;">
+            <text>{{huangjinqihuo_title[1]}}：</text>
+            <image bindtap="updateArc" style="width: 20px; height:20px;" src="../../imgs/update.jpg"></image>
+        </view>
+        <view wx:for="{{arcList}}">
+            <view style="font-size:16px;margin:5px;color:#338FFF;" data-aid='{{item.aid}}' bindtap="gotoArcDetail"> · {{item.title}}</view>
+        </view>
+    </view>
+
+    <view class="content" wx:if="{{answerArcList[0]}}">
+        <view style="font-size:17px;font-weight:bold;display:flex;justify-content:space-between;padding-right:10px;">
+            <text>{{huangjinqihuo_title[5]}}：</text>
+            <image bindtap="updateAnswerArc" style="width: 20px; height:20px;" src="../../imgs/update.jpg"></image>
+        </view>
+        <view wx:for="{{answerArcList}}">
+            <view style="font-size:16px;margin:5px;color:#338FFF;" data-aid='{{item.aid}}' bindtap="gotoAnswerArcDetail"> · {{item.title}}</view>
+        </view>
+    </view>
+
+
+</view>
