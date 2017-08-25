@@ -22,8 +22,8 @@ k线图,chart,e-chart,kline,微信小程序,微信小程序入门,微信小程�
 ## Setup：
 下载安装[Wechat DEV Tools](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html), 并导入[项目](https://github.com/jacksplwxy/wechat-weapp-GoldPrice-kline.git)
 
+### k线参考 https://github.com/Shaman05/wxCharts ，感谢作者
 
 ### Demo用于学习交流, 转载请注明出处
-
 
 
